@@ -67,7 +67,7 @@ func encodeHandler(response http.ResponseWriter, request *http.Request, db Datab
 		log.Println(err)
 		return
 	}
-	resp := map[string]string{"url": strings.Replace(path.Join(baseURL, encode(id)), ":/", "://", -1), "id": encode(id), "error": ""}
+	resp := map[string]string{"url": strings.Replace(path.Join(baseURL, encode(id)), ":/", "://", 1), "id": encode(id), "error": ""}
 	jsonData, _ := json.Marshal(resp)
 	response.Write(jsonData)
 
